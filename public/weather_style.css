@@ -1,0 +1,58 @@
+@import url(http://fonts.googleapis.com/css?family=Ultra);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	margin: 30px auto;
+	width: 700px;
+	background-image: url("http://fc02.deviantart.net/fs71/i/2012/015/d/9/background__snow_by_ayachi_chan-d4mhacw.png");
+
+	color: #174071;
+	text-shadow: 0 -1px 0 white;
+}
+
+H1, H2, H3, H4, H5, H6
+{
+	font-family: Ultra;
+	font-weight: 400;
+	color: white;
+	text-shadow: 0 3px 0 #174071;
+	text-align: center;
+}
+
+table
+{
+	margin: 8px;
+	padding: 5px;
+	width: 100%;
+	background-color: rgba(255,255,255,0.3);
+	border-radius: 12px;
+	border: 1px solid white;
+	box-shadow: 0 0 9px #174071;
+
+	xxxfont-family: Roboto;
+	font-weight: 300;
+	font-size: 20px;
+}
+
+table tr td
+{
+	padding: 6px 10px;
+}
+
+table tr td:first-child
+{
+	text-align: center;
+	width: 80px;
+}
+
+table tr:nth-child(even)
+{
+	background-color: rgba(255,255,255,0.2);
+}
