@@ -40,7 +40,7 @@ if (preg_match_all($scraper_pattern, $table_of_data, $matches))
 	for ($i=0; $i<sizeof($matches[0]); $i++)
 	{
 		$results[$i]["city"] = $matches[1][$i];
-		$results[$i]["temp"] = $matches[2][$i];
+		$results[$i]["temp"] = (int)$matches[2][$i];
 	}
 }
 else
