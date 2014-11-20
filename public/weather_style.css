@@ -10,16 +10,17 @@
 body
 {
 	margin: 30px auto;
-	width: 700px;
+	width: 600px;
 	background-image: url("http://fc02.deviantart.net/fs71/i/2012/015/d/9/background__snow_by_ayachi_chan-d4mhacw.png");
 
-	color: #174071;
+	color: #0e2f56;
 	text-shadow: 0 -1px 0 white;
 }
 
 H1, H2, H3, H4, H5, H6
 {
 	font-family: Ultra;
+	xxxfont-family: Roboto;
 	font-weight: 400;
 	color: white;
 	text-shadow: 0 3px 0 #174071;
@@ -34,11 +35,10 @@ table
 	background-color: rgba(255,255,255,0.3);
 	border-radius: 12px;
 	border: 1px solid white;
-	box-shadow: 0 0 9px #174071;
+	box-shadow: 0 0 9px #174071, inset 0 0 20px white;
 
-	xxxfont-family: Roboto;
-	font-weight: 300;
-	font-size: 20px;
+	font-weight: 400;
+	font-size: 22px;
 }
 
 table tr td
@@ -55,4 +55,19 @@ table tr td:first-child
 table tr:nth-child(even)
 {
 	background-color: rgba(255,255,255,0.2);
+}
+
+img#maple_flag
+{
+	position: absolute;
+	top: 0;
+	left: 55%;
+	z-index: -1;
+}
+
+div#update_data
+{
+	text-align: right;
+	font-size: 12px;
+	font-family: Helvetica, sans-serif;
 }
