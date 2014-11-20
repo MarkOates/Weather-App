@@ -3,7 +3,7 @@ Weather-App
 
 Weather-App is a project given to me as part of a job application.  See "specs.md" for more information regarding the requirements.
 
-The meat of the project are contained in the "internal" folder(s).  Inside there are the front-facing pages (index.php, and api.php), and the scraper (at the time of this writing scraper_test.php).
+The meat of the project is contained in the "internal" folder, the rest is mostly architectural.  Inside there are the front-facing pages (index.php, and api.php), and the scraper (scraper_test.php, at the time of this writing).
 
 To create this app, I'm using the following platforms/tools:
 
