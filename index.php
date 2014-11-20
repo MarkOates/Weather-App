@@ -28,13 +28,20 @@ if (isset($_GET['url']))
 
 if (empty($args))
 {
-	require ("internal/index.php");
-}
-else if ($args[0] == "api")
-{
-	require ("internal/api.php");
+	require ("internal/pages/index.php");
 }
 else
 {
-	echo "<h1>404</h1>";
+	switch($args[0])
+	{
+		case "api":
+			require ("internal/pages/api.php");
+		break;
+		case "scraper_test":
+			require ("internal/tests/scraper_test.php");
+		break;
+		default:
+			echo "<h1>404</h1>";
+		break;
+	}
 }
