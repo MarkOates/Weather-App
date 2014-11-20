@@ -3,7 +3,9 @@ Weather-App
 
 Weather-App is a project given to me as part of a job application.  See "specs.md" for more information regarding the requirements.
 
-To create this app, I'll use the following platforms/tools:
+The meat of the project are contained in the "internal" folder(s).  Inside there are the front-facing pages (index.php, and api.php), and the scraper (at the time of this writing scraper_test.php).
+
+To create this app, I'm using the following platforms/tools:
 
 *   Apache server (An .htaccess file includes RewriteRule for clean URLs)
 *   PHP 5.5.9
