@@ -17,7 +17,7 @@ body
 	text-shadow: 0 -1px 0 white;
 }
 
-H1, H2, H3, H4, H5, H6
+h1, h2, h3, h4, h5, h6
 {
 	font-family: Ultra;
 	xxxfont-family: Roboto;
@@ -26,6 +26,23 @@ H1, H2, H3, H4, H5, H6
 	text-shadow: 0 3px 0 #174071;
 	text-align: center;
 }
+
+img#maple_flag
+{
+	position: absolute;
+	top: 0;
+	left: 55%;
+	z-index: -1;
+}
+
+div#update_data
+{
+	text-align: right;
+	font-size: 12px;
+	font-family: Helvetica, sans-serif;
+}
+
+/* temperature list */
 
 table
 {
@@ -57,17 +74,42 @@ table tr:nth-child(even)
 	background-color: rgba(255,255,255,0.2);
 }
 
-img#maple_flag
+/* control button list */
+
+ul#controls
 {
-	position: absolute;
-	top: 0;
-	left: 55%;
-	z-index: -1;
+	list-style: none;
 }
 
-div#update_data
+ul#controls li
 {
-	text-align: right;
-	font-size: 12px;
-	font-family: Helvetica, sans-serif;
+	display: inline-block;
+	float: left;
+}
+
+ul#controls li button
+{
+	padding: 8px 10px;
+	border: 0;
+	color: white;
+	background-color: #234e82;
+	cursor: pointer;
+}
+
+/* map and city markers */
+
+div.canada_map
+{
+	position: relative;
+}
+
+div.canada_map div.city_marker
+{
+	position: absolute;
+}
+
+div.canada_map div.city_marker span
+{
+	color: white;
+	text-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
 }
