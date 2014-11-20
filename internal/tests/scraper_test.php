@@ -45,6 +45,7 @@ if (preg_match_all($scraper_pattern, $table_of_data, $matches))
 }
 else
 {
+	// patterns did not capture successfully.
 	echo "there was an error matching the patterns.";
 }
 

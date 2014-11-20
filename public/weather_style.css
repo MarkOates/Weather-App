@@ -1,5 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Ultra);
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
 
 *
 {
@@ -20,7 +19,8 @@ body
 
 h1, h2, h3, h4, h5, h6
 {
-	font-family: Ultra;
+	font-family: "Ultra";
+	font-style: italic;
 	font-weight: 400;
 	color: white;
 	text-shadow: 0 3px 0 #174071;

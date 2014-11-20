@@ -1,7 +1,5 @@
-function WeatherApp($scope) {
+function WeatherApp($scope, $http) {
 	$scope.cities = [
-		// these need to be plotted, on a 0-100% positioning on the map
-		// toronto is given as an example
 		{name:"Toronto",temp:4,population:6000,x:68,y:93},
 		{name:"Ottawa",temp:6,population:6000,x:73,y:87},
 		{name:"Montreal",temp:8,population:6000,x:76,y:85},
@@ -13,5 +11,15 @@ function WeatherApp($scope) {
 		{name:"Thunder Bay",temp:9,population:6000,x:52,y:84},
 		{name:"Winnipeg",temp:9,population:6000,x:42,y:81}
 	];
-	$scope.show_map = true;
+	$scope.show_map = false;
+	$scope.update = function()
+	{
+		$http.get("http://localhost/api/cities")
+		.success(function(data, status, headers, config) {
+			$scope.cities = data;
+		});
+	}
 }
+
+
+	
