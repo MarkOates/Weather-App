@@ -4,14 +4,13 @@
 <head>
 <link rel="stylesheet" href="public/weather_style.css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-<script type="text/javascript" src="public/WeatherApp.js"></script>
 </head>
 
 <body>
 
 	<img id="maple_flag" src="public/canadian_maple.png">
 	<h1>Top 10<br>Coldest Canadian Cities</h1>
-	<div ng-app="" ng-controller="WeatherApp">
+	<div ng-app="" ng-controller="WeatherApp" ng-init="update();">
 		<ul id="controls">
 			<li><button type="button" ng-click="update();">Update Manually</button></li>
 			<li><button type="button" ng-click="show_map=true;">Show Map</button></li>
@@ -32,8 +31,10 @@
 				<span>{{ city.name + " (" + city.temp + "&deg;C)" }}</span>
 			</div>
 		</div>
-		<div id="update_data">Page was last updated {{ update_string }}</div>
+		<div id="update_data">Page was last updated {{ last_refresh_time }}</div>
 	</div>
+
+	<script type="text/javascript" src="public/WeatherApp.js"></script>
 
 </body>
 
