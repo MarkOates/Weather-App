@@ -13,28 +13,58 @@
 //		$http.get("http://localhost/api/cities").success( ... );
 
 
-switch ($_SERVER['REQUEST_METHOD'])
+
+if (!isset($args[1]))
 {
-	case "GET":
-		if (!isset($args[1]))
-		{
-			echo ("<h1>API</h1><p>You can access the only API command available by sending a <tt>GET</tt> request through <tt>http://localhost/api/cities</tt>.</p>");
-			echo ("<p>This will provide you with a JSON-formatted response with city name and its temperature. e.g.: <tt>[{city:\"CityName\",temp:1234}, ...}]</tt>.</p>");
-			echo ("<p>The API only supports temperatures from the top 20 most populus cities in the Canadian province.</p>");
-		}
-		else if ($args[1]=="cities")
-		{
-			require("internal/tests/scraper_test.php");
-		}
-		else
-		{
-			echo "404 - API command not found";
-		}
-	break;
-	case "POST":
-	case "PUT":
-	case "DELETE":
-	default:
-		echo "405 - API request method not allowed\n";
-	break;
+	// if there are no args, then the default page is displayed
+
+	echo ("<h1>API</h1><p>The following api commands are supported:</p>\n");
+	echo ("<div>\n");
+	echo ("<tt>curl -X GET http://localhost/api/cities</tt><br>");
+	echo ("<tt>curl -X GET http://localhost/api/last_update_time</tt><br>");
+	echo ("<tt>curl -X PUT http://localhost/api/update</tt>");
+	echo ("</div>\n");
+}
+else
+{
+	switch ($_SERVER['REQUEST_METHOD'])
+	{
+		case "GET":
+			if ($args[1]=="cities")
+			{
+				require "internal/models/WeatherScraper.php";
+				$scraper = new WeatherScraper();
+				echo $scraper->get_last_scrape_json();
+			}
+			else if ($args[1]=="last_update_time")
+			{
+				require "internal/models/WeatherScraper.php";
+				$scraper = new WeatherScraper();
+				echo $scraper->get_last_update_time();
+			}
+			else
+			{
+				echo "404 - API command not found\n";
+			}
+		break;
+		case "POST":
+		case "PUT":
+			if ($args[1]=="update")
+			{
+				require "internal/models/WeatherScraper.php";
+				$scraper = new WeatherScraper();
+				if (!$scraper->fetch_scrape_data()) die ("403 - could not fetch data.");
+				if (!$scraper->parse_scrape_data()) die ("403 - could not parse data.");
+				echo "update was successfull\n";
+			}
+			else
+			{
+				echo "404 - API command not found\n";
+			}
+		break;
+		case "DELETE":
+		default:
+			echo "405 - API request method not supported\n";
+		break;
+	}
 }
