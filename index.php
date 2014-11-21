@@ -37,9 +37,6 @@ else
 		case "api":
 			require ("internal/pages/api.php");
 		break;
-		case "scraper_test":
-			require ("internal/tests/scraper_test.php");
-		break;
 		default:
 			echo "<h1>404</h1>";
 		break;
