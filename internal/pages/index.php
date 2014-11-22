@@ -10,9 +10,9 @@
 
 	<img id="maple_flag" src="public/canadian_maple.png">
 	<h1>Top 10<br>Coldest Canadian Cities</h1>
-	<div ng-app="" ng-controller="WeatherApp" ng-init="update();">
+	<div ng-app="" ng-controller="WeatherApp" ng-init="refresh();">
 		<ul id="controls">
-			<li><button type="button" ng-click="update();">Update Manually</button></li>
+			<li><button type="button" ng-click="refresh();">Update Manually</button></li>
 			<li><button type="button" ng-click="show_map=true;">Show Map</button></li>
 			<li><button type="button" ng-click="show_map=false;">Show List</button></li>
 		</ul>
@@ -31,7 +31,7 @@
 				<span>{{ city.name + " (" + city.temp + "&deg;C)" }}</span>
 			</div>
 		</div>
-		<div id="update_data">Page was last updated {{ last_refresh_time }}</div>
+		<div id="update_data">Page was last refresh {{ last_refresh_time }}</div>
 	</div>
 
 	<script type="text/javascript" src="public/WeatherApp.js"></script>

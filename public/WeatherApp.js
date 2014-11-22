@@ -11,10 +11,10 @@ function WeatherApp($scope, $http, $timeout) {
 		{name:"---",temp:0,population:6000,x:52,y:84},
 		{name:"---",temp:0,population:6000,x:42,y:81}
 	];
-	$scope.show_map = false;
+	$scope.show_map = true;
 	$scope.last_refresh_time = null;
 	$scope.refresh_rate_sec = 30;
-	$scope.update = function()
+	$scope.refresh = function()
 	{
 		$http.get("http://localhost/api/cities")
 		.success(function(data, status, headers, config) {
