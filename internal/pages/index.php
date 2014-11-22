@@ -8,13 +8,12 @@
 
 <body>
 
-	<img id="maple_flag" src="public/canadian_maple.png">
 	<h1>Top 10<br>Coldest Canadian Cities</h1>
 	<div style="position: relative;" ng-app="" ng-controller="WeatherApp" ng-init="refresh();">
+		<img id="maple_flag" ng-hide="show_map" src="public/canadian_maple.png">
 		<ul id="controls">
-			<li><button type="button" ng-click="refresh();">Update Manually</button></li>
-			<li><button type="button" ng-click="show_map=true;">Show Map</button></li>
-			<li><button type="button" ng-click="show_map=false;">Show List</button></li>
+			<li><button type="button" ng-click="show_map=true;">Show Map View</button></li>
+			<li><button type="button" ng-click="show_map=false;">Show List View</button></li>
 		</ul>
 		<br clear="all">
 		<div id="refreshing_spinner" ng-show="refreshing">REFRESHING...</div>
@@ -32,7 +31,7 @@
 				<span>{{ city.name + " (" + city.temp + "&deg;C)" }}</span>
 			</div>
 		</div>
-		<div id="update_data">Page was last refresh {{ last_refresh_time }}</div>
+		<div id="footer">Page was last refreshed {{ last_refresh_time }}<br><a href="/api">API</a> &bull; <a href="https://github.com/MarkOates/Weather-App">This project on GitHub</a> &bull; <span ng-click="refresh();" style="cursor: pointer;"><u>Refresh Manually</u></span></div>
 	</div>
 
 	<script type="text/javascript" src="public/WeatherApp.js"></script>

@@ -11,7 +11,12 @@ body
 {
 	margin: 30px auto;
 	width: 570px;
-	background-image: url("http://fc02.deviantart.net/fs71/i/2012/015/d/9/background__snow_by_ayachi_chan-d4mhacw.png");
+
+    background: url("/public/background_blue_starburst.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
 	color: #0e2f56;
 	text-shadow: 0 -1px 0 white;
@@ -35,16 +40,20 @@ h1
 
 img#maple_flag
 {
-	position: absolute;
-	top: 0;
-	left: 55%;
+	position: fixed;
+	top: 120px;
+	left: 30%;
+	width: 422px;
+	height: 444px;
 	z-index: -1;
 }
 
-div#update_data
+div#footer, div#footer a
 {
-	text-align: right;
+	text-align: center;
 	font-size: 12px;
+	color: rgba(255, 255, 255, 0.35);
+	text-shadow: none;
 }
 
 
@@ -56,12 +65,12 @@ table
 	margin: 8px;
 	padding: 5px;
 	width: 100%;
-	background-color: rgba(255,255,255,0.3);
+	background-color: rgba(255,255,255,0.5);
 	border-radius: 12px;
 	border: 1px solid white;
 	box-shadow: 0 0 9px #174071, inset 0 0 20px white;
 
-	font-weight: 400;
+	font-weight: 500;
 	font-size: 22px;
 }
 
@@ -109,7 +118,7 @@ ul#controls
 {
 	display: block;
 	list-style: none;
-	width: 50%;
+	width: 40%;
 	margin: auto;
 }
 
@@ -121,7 +130,7 @@ ul#controls li
 
 ul#controls li button
 {
-	padding: 8px 10px;
+	padding: 3px 10px;
 	border: 0;
 	color: white;
 	background-color: #234e82;
