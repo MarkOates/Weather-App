@@ -118,6 +118,7 @@ div.canada_map
 div.canada_map div.city_marker
 {
 	position: absolute;
+	white-space: nowrap;
 }
 
 div.canada_map div.city_marker span
