@@ -1,4 +1,4 @@
-function WeatherApp($scope, $http) {
+function WeatherApp($scope, $http, $timeout) {
 	$scope.cities = [
 		{name:"---",temp:0,population:6000,x:68,y:93},
 		{name:"---",temp:0,population:6000,x:73,y:87},
@@ -13,6 +13,7 @@ function WeatherApp($scope, $http) {
 	];
 	$scope.show_map = false;
 	$scope.last_refresh_time = null;
+	$scope.refresh_rate_sec = 30;
 	$scope.update = function()
 	{
 		$http.get("http://localhost/api/cities")
@@ -22,6 +23,8 @@ function WeatherApp($scope, $http) {
 
 		var d = new Date();
 		$scope.last_refresh_time = d.toLocaleDateString() + " " + d.toLocaleTimeString();
+
+		$timeout($scope.update, $scope.refresh_rate_sec * 1000);
 	}
 }
 
