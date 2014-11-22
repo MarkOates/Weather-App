@@ -27,7 +27,7 @@
 		</table>
 		<div class="canada_map" ng-show="show_map">
 			<img src="public/canada_map_large-01.png" style="width: 100%;">
-			<div class="city_marker" ng-style="{'left':'{{get_map_coordinates(city.name).x}}%','top':'{{get_map_coordinates(city.name).y}}%'}" ng-repeat="city in cities | orderBy:'y' | limitTo:10">
+			<div class="city_marker" ng-style="{'left':'{{get_map_coordinates(city.name).x}}%','top':'{{get_map_coordinates(city.name).y}}%'}" ng-repeat="city in cities | orderBy:'temp' | limitTo:10">
 				<img class="marker" src="public/marker_point-01.png">
 				<span>{{ city.name + " (" + city.temp + "&deg;C)" }}</span>
 			</div>
