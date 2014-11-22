@@ -20,11 +20,11 @@ if (!isset($args[1]))
 	echo ("<!DOCTYPE html><html><head><link rel=\"stylesheet\" href=\"/public/api_style.css\"></head><body>");
 	echo ("<h1>WeatherApp API</h1><p>The following api commands are supported:</p>\n");
 	echo ("<div>\n");
-	echo ("<h3>cities</h3>");
+	echo ("<h3>cities <span class=\"lighter\">[GET]</span></h3>");
 	echo ("<pre>curl -X GET http://weatherapp.zeoxdesign.com/api/cities</pre><p>Returns a list of city names and temperatures in json format.</p>");
-	echo ("<h3>last_update_time</h3>");
+	echo ("<h3>last_update_time <span class=\"lighter\">[GET]</span></h3>");
 	echo ("<pre>curl -X GET http://weatherapp.zeoxdesign.com/api/last_update_time</pre><p>Returns the last time the data on the host server was refreshed.</p>");
-	echo ("<h3>update</h3>");
+	echo ("<h3>update <span class=\"lighter\">[PUT]</span></h3>");
 	echo ("<pre>curl -X PUT http://weatherapp.zeoxdesign.com/api/update</pre><p>Asks the host server to perform a refresh.</p>");
 	echo ("</div></body>\n");
 }

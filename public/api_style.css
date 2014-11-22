@@ -29,3 +29,8 @@ h3
 	margin-top: 40px;
 	border-bottom: 1px solid #ddd;
 }
+
+span.lighter
+{
+	color: #b0b0b0;
+}
