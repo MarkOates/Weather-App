@@ -30,6 +30,7 @@ if (!isset($args[1]))
 }
 else
 {
+	// if there are args, then return the proper response
 	switch ($_SERVER['REQUEST_METHOD'])
 	{
 		case "GET":
@@ -50,7 +51,6 @@ else
 				echo "404 - API command not found\n";
 			}
 		break;
-		case "POST":
 		case "PUT":
 			if ($args[1]=="update")
 			{
@@ -65,7 +65,6 @@ else
 				echo "404 - API command not found\n";
 			}
 		break;
-		case "DELETE":
 		default:
 			echo "405 - API request method not supported\n";
 		break;
