@@ -82,13 +82,35 @@ table tr:nth-child(even)
 }
 
 
-/* control button list */
+/* loading div */
 
+div#refreshing_spinner
+{
+	color: white;
+	background-color: rgba(0, 0, 0, 0.4);
+	font-style: italic;
+	text-shadow: 0 0 12px rgba(0, 0, 0, 1);
+	text-align: center;
+
+	border-radius: 20px;
+	padding: 40px 50px;
+	display: inline;
+
+	position: absolute;
+	top: 200px;
+	left: 180px;
+	z-index: 1000;
+}
+
+
+/* control button list */
 
 ul#controls
 {
+	display: block;
 	list-style: none;
-	width: 100%;
+	width: 50%;
+	margin: auto;
 }
 
 ul#controls li
