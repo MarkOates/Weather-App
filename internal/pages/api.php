@@ -23,7 +23,7 @@ if (!isset($args[1]))
 	echo ("<h3>cities <span class=\"lighter\">[GET]</span></h3>");
 	echo ("<pre>curl -X GET http://weatherapp.zeoxdesign.com/api/cities</pre><p>Returns a list of city names and temperatures in json format.</p>");
 	echo ("<h3>last_update_time <span class=\"lighter\">[GET]</span></h3>");
-	echo ("<pre>curl -X GET http://weatherapp.zeoxdesign.com/api/last_update_time</pre><p>Returns the last time the data on the host server was refreshed.</p>");
+	echo ("<pre>curl -X GET http://weatherapp.zeoxdesign.com/api/last_update_time</pre><p>Returns the last UTC datetime that the host server was refreshed in <tt>\"Y-m-d H:i:s\"</tt> format.  Time zone is in UTC.  See PHP's <a href=\"http://php.net/manual/en/function.date.php\">date() format</a> for more info.</p>");
 	echo ("<h3>update <span class=\"lighter\">[PUT]</span></h3>");
 	echo ("<pre>curl -X PUT http://weatherapp.zeoxdesign.com/api/update</pre><p>Asks the host server to perform a refresh.</p>");
 	echo ("</div></body>\n");

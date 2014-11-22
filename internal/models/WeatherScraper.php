@@ -22,7 +22,8 @@ class WeatherScraper
 	{
 		if (file_put_contents($this->local_copy_filename, file_get_contents($this->remote_source_address)))
 		{
-			file_put_contents($this->last_scrape_time_filename, time());
+			date_default_timezone_set("UTC");
+			file_put_contents($this->last_scrape_time_filename, date("Y-m-d H:i:s", time()));
 			return true;
 		}
 		return false;
