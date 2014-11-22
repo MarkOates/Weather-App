@@ -14,7 +14,7 @@ function WeatherApp($scope, $http, $timeout) {
 	];
 	$scope.show_map = false;
 	$scope.last_refresh_time = null;
-	$scope.refresh_rate_sec = 30;
+	$scope.refresh_rate_sec = 60 * 5;  // refresh every 5 minutes
 	$scope.refreshing = false;
 	$scope.refresh_promise = null;
 
