@@ -28,20 +28,26 @@ function WeatherApp($scope, $http, $timeout) {
 		$scope.refreshing = true;
 
 		 // get weather data from our api
-		$http.get("http://localhost/api/cities")
+
+		$http.get("/api/cities")
 		.success(function(data, status, headers, config) {
 			// update our city data
 			$scope.cities = data;
 			// update the last_refresh_time
 			var d = new Date();
 			$scope.last_refresh_time = d.toLocaleDateString() + " " + d.toLocaleTimeString();
+
+			// create a new timeout for the next auto-refresh, it will fire after refresh_rate_sec seconds
+			$scope.refresh_promise = $timeout($scope.refresh, $scope.refresh_rate_sec * 1000);
+
+			// hide the "REFRESHING..." notification after 1 second
+			$timeout(function(){ $scope.refreshing = false; }, 1000);
+		})
+		.error(function(data, status, headers, config) {
+			// report an error if something goes wrong
+			alert("There was an error retrieving data from the API.\n\n" + data);
+			$scope.refreshing = false;
 		});
-
-		// create a new timeout for the next auto-refresh, it will fire after refresh_rate_sec seconds
-		$scope.refresh_promise = $timeout($scope.refresh, $scope.refresh_rate_sec * 1000);
-
-		// hide the "REFRESHING..." notification after 1 second
-		$timeout(function(){ $scope.refreshing = false; }, 1000);
 	}
 
 	$scope.get_map_coordinates = function(city_name){
