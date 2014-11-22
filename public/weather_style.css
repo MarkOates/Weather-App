@@ -13,11 +13,8 @@ body
 	width: 570px;
 
     background: url("/public/background_blue_starburst.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
+    background-color: #010e1f;
+    background-size: 1600px, 1200px;
 	color: #0e2f56;
 	text-shadow: 0 -1px 0 white;
 }
@@ -118,7 +115,7 @@ ul#controls
 {
 	display: block;
 	list-style: none;
-	width: 40%;
+	width: 45%;
 	margin: auto;
 }
 
